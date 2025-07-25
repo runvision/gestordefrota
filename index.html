@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinanceFlow</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>FinanceFlow 💸</h1>
+
+    <div class="summary">
+      <div class="card">
+        <h2>Entradas</h2>
+        <p id="income">+ R$ 0,00</p>
+      </div>
+      <div class="card">
+        <h2>Saídas</h2>
+        <p id="expense">- R$ 0,00</p>
+      </div>
+      <div class="card total">
+        <h2>Total</h2>
+        <p id="balance">R$ 0,00</p>
+      </div>
+    </div>
+
+    <form id="transaction-form">
+      <input type="text" id="desc" placeholder="Descrição" required />
+      <input type="number" id="amount" placeholder="Valor (+/-)" required />
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <ul id="transaction-list"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
