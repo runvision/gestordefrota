@@ -1,39 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FinanceFlow</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Gestão de Frota Pessoal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>FinanceFlow 💸</h1>
 
-    <div class="summary">
-      <div class="card">
-        <h2>Entradas</h2>
-        <p id="income">+ R$ 0,00</p>
-      </div>
-      <div class="card">
-        <h2>Saídas</h2>
-        <p id="expense">- R$ 0,00</p>
-      </div>
-      <div class="card total">
-        <h2>Total</h2>
-        <p id="balance">R$ 0,00</p>
-      </div>
-    </div>
+<header>
+  <h1>🚚 Gestão de Frota</h1>
+  <p>Sistema pessoal de controle e análise</p>
+</header>
 
-    <form id="transaction-form">
-      <input type="text" id="desc" placeholder="Descrição" required />
-      <input type="number" id="amount" placeholder="Valor (+/-)" required />
-      <button type="submit">Adicionar</button>
-    </form>
+<main>
 
-    <ul id="transaction-list"></ul>
-  </div>
+  <section class="card">
+    <h2>Cadastro de Veículo</h2>
+    <input type="text" id="placa" placeholder="Placa">
+    <input type="text" id="modelo" placeholder="Modelo">
+    <button onclick="cadastrarVeiculo()">Cadastrar</button>
+  </section>
 
-  <script src="script.js"></script>
+  <section class="card">
+    <h2>Registro Diário</h2>
+    <select id="veiculoSelect"></select>
+    <input type="number" id="km" placeholder="Km rodado">
+    <input type="number" id="custo" placeholder="Custo (R$)">
+    <select id="tipo">
+      <option value="preventiva">Manutenção Preventiva</option>
+      <option value="corretiva">Manutenção Corretiva</option>
+      <option value="combustivel">Combustível</option>
+    </select>
+    <button onclick="registrar()">Registrar</button>
+  </section>
+
+  <section class="card">
+    <h2>📊 Indicadores (KPIs)</h2>
+    <div id="kpis"></div>
+  </section>
+
+  <section class="card alert">
+    <h2>⚠️ Alertas Inteligentes</h2>
+    <ul id="alertas"></ul>
+  </section>
+
+  <section class="card">
+    <button class="pdf" onclick="gerarPDF()">📄 Gerar PDF Profissional</button>
+  </section>
+
+</main>
+
+<footer>
+  <p>Sistema pessoal de gestão de frota</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
